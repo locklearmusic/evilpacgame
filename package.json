@@ -2,14 +2,11 @@
   "name": "evilpacgame",
   "private": true,
   "type": "module",
-  {
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/evilpacgame/",
     "preview": "vite preview"
-  }
-}
-
+  },
   "dependencies": {
     "phaser": "^3.80.0"
   },
