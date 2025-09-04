@@ -1,2 +1,20 @@
 node_modules
 dist
+<<<<<<< HEAD
+=======
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+node_modules
+dist
+>>>>>>> 891f871 (chore: ignore node_modules + dist)
