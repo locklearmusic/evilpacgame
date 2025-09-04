@@ -1,20 +1,8 @@
 import Phaser from "phaser";
-
-class Demo extends Phaser.Scene {
-  preload() {
-    // put assets in /public/ and load them here
-    // this.load.image("logo", "/logo.png");
-  }
-
-  create() {
-    this.add.text(20, 20, "Hello Lock • Phaser 3", {
-      font: "24px Arial",
-      color: "#00ff99",
-    });
-
-    this.add.rectangle(200, 120, 120, 120, 0x00ff99);
-  }
-}
+import { SceneKeys } from "./config/sceneKeys";
+import BootScene from "./scenes/BootScene";
+import TitleScene from "./scenes/TitleScene";
+import TutorialScene from "./scenes/TutorialScene";
 
 new Phaser.Game({
   type: Phaser.AUTO,
@@ -22,6 +10,12 @@ new Phaser.Game({
   height: 600,
   backgroundColor: "#111111",
   parent: "app",
-  scene: [Demo],
+  scene: [BootScene, TitleScene, TutorialScene],
   physics: { default: "arcade", arcade: { debug: false } },
+  scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
+  callbacks: {
+    postBoot: (game) => {
+      game.scene.start(SceneKeys.Boot);
+    },
+  },
 });
