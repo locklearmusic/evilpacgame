@@ -1,2 +1,4 @@
 import { defineConfig } from "vite";
-export default defineConfig({ base: "/evilpacgame/" });
+export default defineConfig({
+  base: "/evilpacgame/",
+});
