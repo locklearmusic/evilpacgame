@@ -6,6 +6,12 @@ describe("Strings config", () => {
     expect(Strings.TitleText.length).toBeGreaterThan(0);
     expect(Strings.StartPrompt.length).toBeGreaterThan(0);
   });
+
+  it("has tutorial strings", () => {
+    expect(Strings.TutorialTitle).toBe("Tutorial");
+    expect(Strings.TutorialComplete).toBe("Tutorial Complete!");
+    expect(Strings.ContinuePrompt).toBe("Press ENTER to continue");
+  });
 });
 
 

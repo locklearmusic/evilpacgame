@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { SceneKeys } from "../config/sceneKeys";
+import { SceneKeys } from "../core/const";
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -7,7 +7,9 @@ export class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    // Preload core assets here as they are added to the project.
+    // Preload provided PNG assets in public/assets
+    this.load.image("logo", "/assets/evil-pac-logo.png");
+    this.load.image("arcade", "/assets/arcade-bg.png");
   }
 
   create() {
@@ -16,5 +18,3 @@ export class BootScene extends Phaser.Scene {
 }
 
 export default BootScene;
-
-
