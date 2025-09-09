@@ -1,25 +1,25 @@
-  - name: Setup Node
+  name: Setup Node
     uses: actions/setup-node@v4
     with:
       node-version: 20
       cache: npm
       cache-dependency-path: phaser-game/package-lock.json
 
-  - name: Install
+  name: Install
     run: npm ci
 
-  - name: Test
+  name: Test
     run: npm run test --silent
 
-  - name: Build (Vite with repo base)
+  name: Build (Vite with repo base)
     run: npm run build -- --base=/evilpacgame/
 
-  - name: Configure Pages
+  name: Configure Pages
     uses: actions/configure-pages@v5
     with:
       enablement: true
 
-  - name: Upload artifact
+  name: Upload artifact
     uses: actions/upload-pages-artifact@v3
     with:
       path: phaser-game/dist
