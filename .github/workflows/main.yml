@@ -8,10 +8,10 @@
   - name: Install
     run: npm ci
 
-  - name: Run tests
-    run: npm run test
+  - name: Test
+    run: npm run test --silent
 
-  - name: Build (Vite, repo base)
+  - name: Build (Vite with repo base)
     run: npm run build -- --base=/evilpacgame/
 
   - name: Configure Pages
